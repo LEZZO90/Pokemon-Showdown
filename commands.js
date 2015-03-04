@@ -991,6 +991,15 @@ var commands = exports.commands = {
 	/*********************************************************
 	 * Moderating: Other
 	 *********************************************************/
+	
+	unlink: 'breaklink',
+	bl: 'breaklink',
+	lb: 'breaklink',
+	linkbreak: 'breaklink',
+	breaklink: function (target, room, user) {
+		if (!this.can('warn', null, room)) return false;
+		this.add('|unlink| + target);
+	},
 
 	mn: 'modnote',
 	modnote: function (target, room, user, connection) {
