@@ -98,7 +98,7 @@ exports.commands = {
         if (!this.canBroadcast()) return;
         if (this.broadcasting) return this.sendReplyBox('<center><b>Click <button name = "send" value = "/shop">here</button> to enter our shop!');
         var status = (!global.shopclosed) ? '<b>Shop status: <font color = "green">Open</font></b><br />To buy an item, type in /buy [item] in the chat, or simply click on one of the buttons.' : '<b>Shop status: <font color = "red">Closed</font></b>';
-        this.sendReplyBox('<center><h3><b><u>Point Shop</u></b></h3><table border = "1" cellspacing = "0" cellpadding = "2"><tr><th>Item</th><th>Description</th><th>Price</th><th></th></tr>' +
+        this.sendReplyBox('<center><h3><b><u>Lightning Shop</u></b></h3><table border = "1" cellspacing = "0" cellpadding = "2"><tr><th>Item</th><th>Description</th><th>Price</th><th></th></tr>' +
             '<tr><td>Symbol</td><td>Buys a symbol to be placed in front of your username.</td><td>5</td><td><button name = "send", value = "/buy symbol"><b>Buy!</b></button></td></tr>' +
             '<tr><td>Color</td><td>Buys the ability to change your username color in the chat.</td><td>15</td><td><button name = "send", value = "/buy color"><b>Buy!</b></button></td></tr>' +
             '<tr><td>Avatar</td><td>Buys a custom avatar.</td><td>25</td><td><button name = "send", value = "/buy avatar"><b>Buy!</b></button></td></tr>' +
@@ -273,7 +273,7 @@ exports.commands = {
     },
 
 
-    customavatar: function(target, room, user) {
+    customavatara: function(target, room, user) {
         target = target.trim()
         if (user.requestedavy === true) return this.sendReply("You've already requested a custom avatar, wait for it to be added.");
         if (!user.hasavatar) return this.sendReply("You haven't bought a custom avatar yet!");
