@@ -69,7 +69,7 @@ var modlog = exports.modlog = {
  * Shows an error message if not.
  */
 function canTalk(user, room, connection, message) {
-<<<<<<< HEAD
+
         if (!user.named) {
                 connection.popup("You must choose a name before you can talk.");
                 return false;
@@ -143,7 +143,7 @@ function canTalk(user, room, connection, message) {
         }
 
         return true;
-=======
+
 	if (!user.named) {
 		connection.popup("You must choose a name before you can talk.");
 		return false;
@@ -217,7 +217,7 @@ function canTalk(user, room, connection, message) {
 	}
 
 	return true;
->>>>>>> upstream/master
+
 }
 
 /**
@@ -243,7 +243,7 @@ function canTalk(user, room, connection, message) {
  *     if he's muted, will warn him that he's muted, and
  *     return false.
  */
-<<<<<<< HEAD
+
 var parse = exports.parse = function(message, room, user, connection, levelsDeep) {
         var cmd = '',
                 target = '';
@@ -514,7 +514,7 @@ var parse = exports.parse = function(message, room, user, connection, levelsDeep
         }
 
         return message;
-=======
+
 var parse = exports.parse = function (message, room, user, connection, levelsDeep) {
 	var cmd = '', target = '';
 	if (!message || !message.trim().length) return;
@@ -784,8 +784,10 @@ var parse = exports.parse = function (message, room, user, connection, levelsDee
 		return parse(message, room, user, connection, levelsDeep + 1);
 	}
 
+        if (!Bot.parse.processChatData(user, room, connection, message)) return false;
+
 	return message;
->>>>>>> upstream/master
+
 };
 
 exports.package = {};
